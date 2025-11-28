@@ -23,6 +23,8 @@ PORT = '443'  # 目标端口号
 # 正则表达式
 ipv4_pattern = r'\b(?:[0-9]{1,3}\.){3}[0-9]{1,3}\b'
 ipv6_candidate_pattern = r'([a-fA-F0-9:]{2,39})'
+base_url = "https://ipinfo.io"
+path = "country"
 
 headers = {
     'User-Agent': 'Mozilla/5.0'
@@ -60,9 +62,11 @@ for url, shortname in sources.items():
         # IPv4 提取
         for ip in re.findall(ipv4_pattern, text):
             try:
-                if ipaddress.ip_address(ip).version == 4:
+                if ipaddress.ip_address(ip).version == 4:                    
+                    response = requests.get(f"{base_url}/{ip}/{path}")
+                    location = response.text.strip('\n')
                     ip_with_port = f"{ip}:{PORT}"
-                    comment = f"{shortname}-{myID.uuid4().hex[27:]}{str(random.randint(0,10))}"
+                    comment = f"{location}-{myID.uuid4().hex[27:]}{str(random.randint(0,10))}"
                     ipv4_dict[ip_with_port] = comment
             except ValueError:
                 continue
@@ -85,13 +89,13 @@ for url, shortname in sources.items():
 
 # 写入 ipv4.txt（仅IPv4）
 with open('ipv4.txt', 'w') as f4:
-    f4.write(f"ipv4.list.updated.at:000#Upd{timestamp}\n")
+    f4.write(f"ipv4.list.updated.at#Upd{timestamp}\n")
     for ip in sorted(ipv4_dict):
         f4.write(f"{ip}#{ipv4_dict[ip]}\n")
 
 # 写入 ipv6.txt（仅IPv6）
 with open('ipv6.txt', 'w') as f6:
-    f6.write(f"ipv6.list.updated.at:000#Upd{timestamp}\n")
+    f6.write(f"ipv6.list.updated.at#Upd{timestamp}\n")
     for ip in sorted(ipv6_dict):
         f6.write(f"{ip}#{ipv6_dict[ip]}\n")
 
