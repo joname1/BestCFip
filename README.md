@@ -10,22 +10,23 @@
 ## 使用
 * ``ipv4.txt``
 ```shell
-https://ghfast.top/https://github.com/joname1/BestCFip/blob/main/ipv4.txt
+https://ghfast.top/https://github.com/helluen/BestCFip111/blob/main/ipv4.txt
 ```
 ```shell
-https://raw.gitmirror.com/joname1/BestCFip/refs/heads/main/ipv4.txt
+https://raw.gitmirror.com/helluen/BestCFip111/refs/heads/main/ipv4.txt
 ```
 ```shell
-https://raw.githubusercontent.com/joname1/BestCFip/refs/heads/main/ipv4.txt
+https://raw.githubusercontent.com/helluen/BestCFip111/refs/heads/main/ipv4.txt
 ```
 
 * ``ipv6.txt``
 ```shell
-https://ghfast.top/https://github.com/joname1/BestCFip/blob/main/ipv6.txt
+https://ghfast.top/https://github.com/helluen/BestCFip111/blob/main/ipv6.txt
 ```
 ```shell
-https://raw.gitmirror.com/joname1/BestCFip/refs/heads/main/ipv6.txt
+https://raw.gitmirror.com/helluen/BestCFip111/refs/heads/main/ipv6.txt
 ```
 ```shell
-https://raw.githubusercontent.com/joname1/BestCFip/refs/heads/main/ipv6.txt
+https://raw.githubusercontent.com/helluen/BestCFip111/refs/heads/main/ipv6.txt
+
 ```
